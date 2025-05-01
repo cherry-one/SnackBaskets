@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선정 부식 리스트</title>
+    <link rel="stylesheet" href="selectlist.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script>
+        const snackData = [
+            { week: '04-28 ~ 05-02', items: '몬스터, 핫식스, 육개장, ...', more: '+3' },
+            { week: '04-21 ~ 04-25', items: '도시락, 컵밥, ...', more: '+2' },
+            { week: '04-14 ~ 04-18', items: '물, 커피, ...', more: '+1' }
+        ];
+
+            // DOM이 완전히 로드된 후 실행됨
+            window.addEventListener('DOMContentLoaded', () => {
+            // 실행 코드 작성
+            const tbody = document.getElementById('table-body');
+
+            snackData.forEach(row => {
+                const tr = document.createElement('tr');
+
+                const tdWeek = document.createElement('td');
+                tdWeek.textContent = row.week;
+
+                const tdItem = document.createElement('td');
+
+
+                tdItem.innerHTML = `
+                ${row.items}
+                <span class="more">${row.more}</span>
+
+                <a href="#" class="link-chevron" onclick="window.top.location.href='comments.html'">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+        `;
+
+                tr.appendChild(tdWeek);
+                tr.appendChild(tdItem);
+                tbody.appendChild(tr);
+            });
+        });
+    </script>
+
+</head>
+
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>주차</th>
+                <th>신청 부식 list</th>
+            </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+    </table>
+
+</body>
+
+</html>

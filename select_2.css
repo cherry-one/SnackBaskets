@@ -1,0 +1,211 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(157, 188, 255);
+    color: #ffffff;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.user-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.user-icon i {
+    font-size: 34px;
+    color: #ffffff;
+}
+
+.login img {
+    height: 34px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.info-bar p {
+    background-color: rgb(222, 233, 253);
+    margin: 0;
+    padding: 10px;
+}
+
+.arrow {
+    height: 20px;
+    margin-left: 200px;
+    margin-top: 30px;
+}
+
+.main-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+a:hover{
+    color: black;
+    font-weight: bold;
+}
+
+button{
+    border: rgb(157, 188, 255) solid 2px;
+    background-color: rgb(157, 188, 255);
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+button:hover{
+    color: black;
+    font-weight: bold;
+}
+
+/* 사용자 우측 */
+.user-info{
+    position: absolute;
+    right: 1em;
+}
+.back-button {
+    z-index: 99;
+    position: absolute;
+    bottom: 29em;
+    right:61em;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+} 
+
+.vote_box h4 {
+    text-align: left;
+    padding-left: 0.5em;
+}
+
+.table_pp {
+    margin-top: 0.5em;
+    overflow-x: auto;
+}
+.table_pp>p {
+    border: rgb(0,0,0) solid;
+    border-width: 0px 1px;
+    background-color: rgb(222, 233, 253);
+    margin: 0%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid black 1px;
+}
+
+th {
+    background-color: rgb(157, 188, 255);
+    color: white;
+    padding: 0.5em;
+    font-weight: normal;
+    border: solid black 1px;
+}
+
+td {
+    padding: 0.5em;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    border: solid black 1px;
+}
+
+.table_tt {
+    overflow-x: auto;
+}
+.table_tt>p {
+    border: rgb(0,0,0) solid;
+    border-width: 0px 1px;
+    background-color: rgb(222, 233, 253);
+    margin: 0%;
+}
+.table_yy {
+    overflow-x: auto;
+}
+.table_yy>p {
+
+    background-color: rgb(222, 233, 253);
+    margin: 0%;
+}
+
+.money{
+    border: rgb(0,0,0) solid;
+    border-width: 0px 1px 1px;
+    background-color: rgb(157, 188, 255);
+    margin: 0%;
+}
+.m1{
+    border: black solid;
+    border-width: 1px 0px;
+    margin: 0%;
+    padding: 5px;
+}
+.m2{
+    padding: 5px;
+    margin: 0%;
+}
+
+.register {
+    text-align: center;
+    margin: 1em;
+    margin-bottom: 10px;
+}
+
+/* .register>button {
+    background-color: rgb(157, 188, 255);
+    color: white;
+    padding: 0.6em 1.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} 
+
+.register>button:hover{
+    color: black;
+    font-weight: bold;
+} */
+
+.select-btn {
+    display: inline-block;
+    line-height: 40px;  
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    width: 20%;
+    min-width: 100px;
+    max-width: 200px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background-color: rgb(157, 188, 255);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 50px;
+}
