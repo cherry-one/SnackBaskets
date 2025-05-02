@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // 카카오계정로그인
         Kakao.init('589be75a091dfe592e704844287e451a'); // 본인 JavaScript 키 사용
@@ -51,8 +52,9 @@
     <div class="main-content">
         <div class="graph">
             <h3>실시간 투표 그래프</h3>
+            <canvas id="snackBarChart" width="400" height="300"></canvas>
             <div class="bar-graph">
-                <div class="bar-label">예감</div>
+                <!-- <div class="bar-label">예감</div>
                 <div class="bar">
                     <div class="fill color1" style="width: 60%"><span>60%</span></div>
                 </div>
@@ -63,11 +65,11 @@
                 <div class="bar-label">햇반</div>
                 <div class="bar">
                     <div class="fill color3" style="width: 50%"><span>50%</span></div>
-                </div>
+                </div> -->
             </div>
 
             <h3>카테고리별 비율</h3>
-            <div class="pie"></div>
+            <!-- <div class="pie"></div>
 
             <div class="legend">
                 <div class="legend-item">
@@ -82,7 +84,8 @@
                     <span class="pie-box color3"></span>
                     <span class="label-text">그 외</span>
                 </div>
-            </div>
+            </div> -->
+            <canvas id="myPieChart" width="300" height="300"></canvas>
         </div>
 
         <!-- 우측 패널 -->
@@ -98,6 +101,82 @@
             </section>
         </div>
     </div>
+    <script>
+                // 파이 그래프
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+
+        const chartData = {
+            labels: ['스낵류', '음료', '기타'],
+            datasets: [{
+                label: '투표 결과',
+                data: [30, 45, 25],
+            backgroundColor: ['#b77dfa', '#ffc18f', '#a9dfbf']
+            }]
+        };
+
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+            data: chartData,
+            options: {
+                responsive: true,
+                plugins: {
+            legend: {
+                position: 'bottom',
+                },
+            }
+        }
+        });
+
+        // 실시간 데이터 시뮬레이션 (2초마다 랜덤 업데이트)
+        setInterval(() => {
+        chartData.datasets[0].data = [
+            Math.floor(Math.random() * 100),
+            Math.floor(Math.random() * 100),
+            Math.floor(Math.random() * 100)
+        ];
+        myChart.update();
+        }, 5000);
+
+    </script>
+    <script>
+        const ctx1 = document.getElementById('snackBarChart').getContext('2d');
+    
+        const chartData1 = {
+          labels: ['포카칩', '새우깡', '오징어집', '홈런볼', '초코파이'],
+          datasets: [{
+            label: '득표 수',
+            data: [12, 19, 7, 14, 10],
+            backgroundColor: [
+              '#b77dfa', '#ffc18f', '#a9dfbf']
+          }]
+        };
+    
+        const barChart = new Chart(ctx1, {
+          type: 'bar',
+          data: chartData1,
+          options: {
+            indexAxis: 'y', // 👉 가로 막대 설정
+            responsive: true,
+            animation: true,
+            scales: {
+              x: {
+                beginAtZero: true
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+    
+        // 실시간 데이터 시뮬레이션 (2초마다 랜덤 업데이트)
+        setInterval(() => {
+          chartData1.datasets[0].data = chartData1.labels.map(() => Math.floor(Math.random() * 50));
+          barChart.update();
+        }, 2000);
+      </script>
 </body>
 
 </html>

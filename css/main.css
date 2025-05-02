@@ -108,6 +108,10 @@ header h2 {
 .fill.color2 { background-color: #ffc18f; }
 .fill.color3 { background-color: #a9dfbf; }
 
+#snackBarChart{
+    transition: backgroundColor 0.3s ease;
+}
+
 /* 파이 그래프 */
 .pie {
     position: relative;
