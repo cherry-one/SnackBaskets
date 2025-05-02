@@ -1,3 +1,4 @@
+/* 기본 스타일 */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -11,9 +12,8 @@ a {
     color: white;
 }
 
-a:hover{
-    color: rgb(30, 63, 172);
-    font-weight: bold;
+a:hover {
+    color: black;
 }
 
 header {
@@ -27,19 +27,13 @@ header {
 
 header h2 {
     margin: 0;
+    font-size: 20px;
 }
 
 .user-tools {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.user-icon {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #ffffff;
 }
 
 .user-icon i {
@@ -59,68 +53,7 @@ header h2 {
     padding: 10px;
 }
 
-
-.arrow {
-    height: 20px;
-    margin-left: 200px;
-    margin-top: 30px;
-}
-
-
-.snack {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; 
-}
-
-th {
-    background-color: rgb(157, 188, 255);
-    color: #ffffff;
-}
-
-th, td {
-    padding: 8px;
-    border: 1px solid rgb(157, 188, 255);
-    text-align: center; 
-    font-size: 14px;
-    white-space: nowrap; 
-}
-
-td {
-    position: relative;
-    background-color: rgb(246, 249, 255);
-}
-
-.link-chevron {
-    position: absolute;
-    right: 30px;
-    top: 30%;
-    text-decoration: none;
-    color: rgb(157, 188, 255);
-}
-
-.link-chevron i {
-    font-size: 14px;
-    vertical-align: middle;
-}
-
-.link-chevron:hover {
-    color: rgb(0, 81, 255);
-}
-
-.more {
-    color: #888;
-    font-size: 12px;
-}
-
-/* 메인 레이아웃 (좌우 배치) */
+/* 메인 콘텐츠 */
 .main-content {
     display: flex;
     justify-content: space-between;
@@ -128,6 +61,20 @@ td {
     gap: 40px;
     padding: 20px;
 }
+
+/* 그래프 영역 */
+.graph {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.bar-label {
+    margin: 8px 0 4px;
+    font-weight: bold;
+}
+
 .bar {
     background-color: #e0e0e0;
     border-radius: 20px;
@@ -161,11 +108,66 @@ td {
 .fill.color2 { background-color: #ffc18f; }
 .fill.color3 { background-color: #a9dfbf; }
 
-.register-btn, .vote-btn, send-btn, select-btn {
+/* 파이 그래프 */
+.pie {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: conic-gradient(#b77dfa 0% 65%, #ffc18f 65% 90%, #a9dfbf 90% 100%);
+    margin: 0 auto 10px;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pie-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.pie-box.color1 { background-color: #b77dfa; }
+.pie-box.color2 { background-color: #ffc18f; }
+.pie-box.color3 { background-color: #a9dfbf; }
+
+.label-text {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 우측 패널 */
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.panel {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.register-btn, .vote-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 40%;
     min-width: 100px;
     max-width: 200px;
     height: 40px;
@@ -175,59 +177,15 @@ td {
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    margin: 0 50px;
 }
 
-.register {
-    text-align: center;
-    margin: 1em;
-    margin-bottom: 10px;
+.select-panel {
+    height: 500px;
 }
 
-
-
-/* 반응형 미디어 쿼리 */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header h2 {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-
-    .user-tools {
-        justify-content: flex-end;
-        width: 100%;
-    }
-
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        gap: 30px;
-    }
-
-    .graph,
-    .side-panel {
-        width: 100%;
-    }
-
-    .panel {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .register-btn,
-    .vote-btn {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .arrow {
-        margin: 20px auto;
-        display: block;
-    }
+.select-frame {
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(157, 188, 255);
+    border-radius: 5px;
 }
