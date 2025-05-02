@@ -1,4 +1,4 @@
-/* 공통 요소 */
+/* 공통 요소
 html, body {
     margin: 0;
     padding: 0;
@@ -11,47 +11,39 @@ html, body {
     overflow-x: hidden;
     width: 100vw;
     height: 100%;
+} */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
 }
 
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
 
-header, footer {
+a:hover {
+    color: rgb(30, 63, 172);
+    font-weight: bold;
+}
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(157, 188, 255);
     color: #ffffff;
     padding: 10px;
-    width: 100%;
-    height: 30px;
-    font-weight: bold;
 }
-#notmain_header {
-    background-color: rgb(157, 188, 255);
-    width: 100%;
-    height: 30px;
-    max-width: 100vw;
+
+header h2 {
+    margin: 0;
 }
-#notmain_header > div{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    width: 960px;
-    margin: 0 auto;
-}
-a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-}
-#logo{
-    z-index: 99;
-    position: absolute;
-    left: 50%;
-    top: 25px;
-    transform: translate(-50%, -50%);
-}
+
 .user-tools {
     display: flex;
     align-items: center;
@@ -82,23 +74,70 @@ a{
     padding: 10px;
 }
 
-button {
-    cursor: pointer;
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
+
+.arrow {
+    height: 20px;
+    margin-left: 200px;
+    margin-top: 30px;
 }
 
 
-/* 메인 레이아웃 (좌우 배치) */
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    padding: 20px;
+.snack {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th {
+    background-color: rgb(157, 188, 255);
+    color: #ffffff;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid rgb(157, 188, 255);
+    text-align: center;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+td {
+    position: relative;
+    background-color: rgb(246, 249, 255);
+}
+
+.link-chevron {
+    position: absolute;
+    right: 30px;
+    top: 30%;
+    text-decoration: none;
+    color: rgb(157, 188, 255);
+}
+
+.link-chevron i {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.link-chevron:hover {
+    color: rgb(0, 81, 255);
+}
+
+.more {
+    color: #888;
+    font-size: 12px;
 }
 
 /* 그래프 영역 */
+/* 막대그래프 */
 .graph {
     background-color: #ffffff;
     padding: 20px;
@@ -144,71 +183,29 @@ button {
     font-size: medium;
 }
 
-.fill.color1 { background-color: #7da9fa; }
-.fill.color2 { background-color: #ffc18f; }
-.fill.color3 { background-color: #a9dfbf; }
-
-/* 파이 그래프 */
-.pie {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-image: conic-gradient(#7da9fa 0% 65%, #ffc18f 65% 90%, #a9dfbf 90% 100%);
-    margin: 0 auto 10px;
+.fill.color1 {
+    background-color: #b77dfa;
 }
 
-.legend {
+.fill.color2 {
+    background-color: #ffc18f;
+}
+
+.fill.color3 {
+    background-color: #a9dfbf;
+}
+
+.register-btn,
+.vote-btn,
+send-btn,
+select-btn {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.pie-box {
-    width: 16px;
-    height: 16px;
-    border-radius: 3px;
-    display: inline-block;
-}
-
-.pie-box.color1 { background-color: #7da9fa; }
-.pie-box.color2 { background-color: #ffc18f; }
-.pie-box.color3 { background-color: #a9dfbf; }
-
-.label-text {
-    color: #333;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* 오른쪽 패널 */
-.side-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1;
-}
-
-.panel {
-    display: flex;
-    gap: 10px;
     justify-content: center;
-    color: #ffffff;
-
-}
-
-.register-btn, .vote-btn {
+    align-items: center;
     width: 20%;
     min-width: 100px;
     max-width: 200px;
-    height: 20%;
+    height: 40px;
     font-size: 16px;
     border: none;
     background-color: rgb(157, 188, 255);
@@ -218,24 +215,27 @@ button {
     margin: 0 50px;
 }
 
-.select-panel {
-    height: 500px;
-}
-.select-frame {
-    width: 100%;
-    height: 100%;
-    border: 2px solid rgb(255, 188, 157);
-    border-radius: 5px;
-}
-/* 관리자 페이지 */
-#backbtn img{
-    width: 30px;
-    height: 20px;
-    object-fit:contain;
+.register {
+    text-align: center;
+    margin: 1em;
+    margin-bottom: 10px;
 }
 
-#manage_main {
+
+.box1 {
+    width: 960px;
     display: flex;
+    padding: 10px 0;
+}
+
+/* 관리자 페이지 */
+
+.manage_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
     width: 960px;
     height: calc(100% - 100px);
     border: #333 1px solid;
@@ -243,44 +243,50 @@ button {
     align-items: flex-start;
 }
 
-#usrtext{
+#usrtext {
     margin-right: 10px;
 }
 
-.box1 {
-    width: 960px;
-    display: flex;
-    padding: 10px 0;
-}
-#con1 {
-    border: #333 1px solid;
-    height: 300px;   
-}
-
-#con1 {
+.con1 {
     width: 620px;
     margin-left: 10px;
     margin-right: 20px;
+    border: #333 1px solid;
+    height: 300px;
 }
 
-#con2 {
+.con2 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 300px;
 }
-#con2 > * {
+
+.con2>* {
     background-color: rgb(207, 207, 207);
     height: 30px;
     border-radius: 8px;
     font-weight: bold;
 }
-#con2 > button:hover {
+
+.con2>button:hover {
     background-color: #cacaca;
     scale: 0.99;
 }
+
+/* 프린터 버튼*/
+.print {
+    background-color: #c7c7c7;
+    border-radius: 4px;
+}
+
+.print:hover {
+    background-color: #a7a7a7;
+    scale: 0.99;
+}
+
 /* 부식목록 */
-.box2{
+.box2 {
     display: flex;
     width: 940px;
     margin-left: 10px;
@@ -289,7 +295,8 @@ button {
     box-sizing: border-box;
     position: relative;
 }
-.box2 > div {
+
+.box2>div {
     display: flex;
     width: 940px;
     height: 30px;
@@ -299,22 +306,16 @@ button {
     background-color: rgb(207, 207, 207);
     line-height: 30px;
 }
-/* 프린터 버튼*/
-#print{
-    background-color: #c7c7c7;
-    border-radius: 4px;
-}
-.box2 > div > button > img {
+
+.box2>div>button>img {
     display: flex;
     justify-content: center;
     object-fit: contain;
     width: 25px;
 }
-#print:hover {
-    background-color: #a7a7a7;
-    scale: 0.99;
-}
-#tablebox{
+
+
+.tablebox {
     padding: 0;
     width: 100%;
     height: calc(100% - 80px);
@@ -322,37 +323,47 @@ button {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.box2 > div > table {
+
+.box2>div>table {
     border-collapse: collapse;
     width: 940px;
 }
-.listno{
+
+.listno {
     width: 30px;
     text-align: center;
 }
-.listitem{
+
+.listitem {
     width: 200px;
     text-align: center;
 }
-.listprice{
+
+.countcell,
+input[type=number] {
+    width: 30px;
+    text-align: center;
+}
+
+.checkcell {
+    width: 30px;
+    text-align: center;
+}
+
+
+
+/* managerlist - js 확인 */
+.listprice {
     width: 60px;
     text-align: right;
 }
-#listpriceid{
+
+#listpriceid {
     text-align: center;
 }
-.countcell, input[type=number]{
-    width: 30px;
-    text-align: center;
-}
-.checkcell{
-    width: 30px;
-    text-align: center;
-}
-#managerlist *{
-    border: #333 1px solid;
-}
-#manage_sum {
+
+
+.manage_sum {
     position: absolute;
     display: flex;
     justify-content: flex-start;
@@ -361,7 +372,12 @@ button {
     line-height: 40px;
     font-size: x-large;
 }
-#mana_sum{
+
+.managerlist {
+    border: #333 1px solid;
+}
+
+#mana_sum {
     color: rgb(255, 255, 105);
     font-weight: bold;
     font-size: x-large;
@@ -369,8 +385,9 @@ button {
     width: 300px;
     margin-left: 10px;
 }
+
 /* 모달 공통 */
-.modal{
+.modal {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -384,21 +401,14 @@ button {
     flex-direction: column;
     padding: 20px;
 }
-.mohead{
+
+.mohead {
     position: relative;
     display: flex;
     justify-content: center;
 }
-#searchtool{
-    display: block;
-    width: 30px;
-    height: 30px;
-    border: none;
-}
-#searchtool > img{
-    height: 30px;
-}
-.searchset{
+
+.searchset {
     display: flex;
     width: 40%;
     padding: 0 10px;
@@ -406,7 +416,49 @@ button {
     background-color: #ffffff;
     justify-content: center;
 }
-.exit_modal{
+
+.searchtool {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.searchtool>img {
+    height: 30px;
+}
+
+
+
+
+
+/* 가격 정보 관리 팝업 */
+.sitelist {
+    height: 200px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.sitelist table {
+    border-collapse: collapse;
+}
+
+.sitelist>table>tr>td {
+    background-color: #fff;
+}
+
+.sitelist>table tr:hover {
+    background-color: #cacaca;
+    cursor: pointer;
+}
+
+
+/* 화이트리스트 팝업 */
+.exit_modal {
     width: 30px;
     height: 30px;
     display: block;
@@ -414,18 +466,20 @@ button {
     right: 0;
     top: 0;
 }
-/* 화이트리스트 팝업 */
+
 .mohead {
     width: 100%;
     height: 30px;
 }
-.searchbox{
+
+.searchbox {
     display: block;
     width: 500px;
     height: 30px;
     border: none;
 
 }
+
 #quick {
     background-color: #fff;
     margin-top: 20px;
@@ -436,7 +490,8 @@ button {
     display: flex;
     border-radius: 4px;
 }
-#quick_name{
+
+#quick_name {
     background-color: #f1f1f1;
     width: 150px;
     height: 30px;
@@ -446,7 +501,8 @@ button {
     border: 1px solid #333;
     border-radius: 4px;
 }
-#quick_email{
+
+#quick_email {
     background-color: #f1f1f1;
     width: 400px;
     height: 30px;
@@ -458,7 +514,9 @@ button {
     border: 1px solid #333;
     border-radius: 4px;
 }
-#quick_submit, #quick_delete{
+
+#quick_submit,
+#quick_delete {
     width: 50px;
     height: 30px;
     background-color: #f1f1f1;
@@ -466,7 +524,9 @@ button {
     border-radius: 4px;
     border: 1px solid #333;
 }
-.modaltext{
+
+
+.modaltext {
     display: flex;
     margin-top: 10px;
     height: 30px;
@@ -479,144 +539,214 @@ button {
     justify-content: space-between;
     position: relative;
 }
-.modaltext > a {
+
+.modaltext>a {
     display: block;
 }
+
 #uploadBtn {
     position: absolute;
     right: 40px;
 }
-#uploadBtn > img {
+
+#uploadBtn>img {
     height: 20px;
     width: 20px;
 }
-#dnloadBtn > img{
+
+#dnloadBtn>img {
     transform: rotate(180deg);
     width: 20px;
     height: 20px;
 }
-#authlist{
+
+.authlist {
     height: 270px;
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
 
 }
-#authlist table{
+
+.authlist table {
     border-collapse: collapse;
     background-color: #fff;
     border-radius: 0 0 4px 4px;
     width: 100%;
     height: 100%;
 }
-#authlist table tr td {
+
+.authlist table tr td {
     border: #cacaca 1px solid;
     padding: 0px 10px;
     height: 20px;
     font-size: 0.9em;
     color: #5e5e5e;
 }
-.wl_name{
+
+.wl_name {
     width: 150px;
 }
+
+
+
+
 /* 가격 정보 관리 팝업 */
-#pop_si{
+.modal.pop_si {
     height: 300px;
     box-sizing: border-box;
 }
-#site_search > form{
+
+.mohead.site_search>form {
     width: 100%;
     justify-content: left;
     background-color: rgba(255, 255, 255, 0);
 }
-#site_search > form > input {
+
+.mohead.site_search>form>input {
     background-color: #ffffff;
     margin-right: 10px;
     border-radius: 4px;
     padding: 0 10px;
 }
+
 #site_submit {
     border-radius: 4px;
     padding: 0 10px;
     background-color: #fff;
 }
-#sitelist{
-    height: 200px;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 0 0 4px 4px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    box-sizing: border-box;
-}
-#sitelist table{
-    border-collapse: collapse;
-}
-#sitelist > table > tr > td{
-    background-color: #fff;
-}
-#sitelist > table tr:hover{
-    background-color: #cacaca;
-    cursor: pointer;
-}
-.siteurl{
+
+.siteurl {
     width: 95%;
 }
-.delete_btn{
+
+.delete_btn {
     width: 5%;
     display: block;
 }
-.delete_btn > img {
+
+.delete_btn>img {
     width: 15px;
 }
-/* 삭제시 애니메이션 */
+
+
+/* class 없음.
+삭제시 애니메이션 */
 .slide_out {
     transform: translateX(-100%);
     opacity: 0;
     transition: all 0.4s ease;
 }
+
+
+
 /* 투표팝업 */
-#pop_vo {
+.modal.pop_vo {
     height: 200px;
 }
-#pop_vo > section {
+
+.modal.pop_vo>section {
     height: 50%;
 }
-#pop_vo > section > div > span {
+
+.modal.pop_vo>section>div>span {
     width: 150px;
     display: inline-block;
     margin-bottom: 10px;
 }
-.subtext{
+
+.subtext {
     width: 50px !important;
 }
-#vohead{
+
+.vohead {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
-#vohead > div {
+
+.vohead>div {
     margin-bottom: 10px;
 }
+
 /* 금액 설정 팝업 */
-#pop_pr{
+.modal.pop_pr {
     height: 80px;
 }
-#prhead{
+
+.mohead.prhead {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.selftype{
+
+.mohead.prhead>div>span {
+    margin-right: 10px;
+}
+
+.selftype {
     width: 100px;
     text-align: right;
 }
-#moneylimit {
+
+.moneylimit {
     width: 100%;
     display: flex;
     margin-bottom: 10px;
 }
-#prhead > div > span {
-    margin-right: 10px;
+
+@media screen and (max-width: 768px) {
+
+    header,
+    .main-content,
+    .side-panel,
+    .panel,
+    .graph,
+    .con1,
+    .box2 {
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    .register-btn,
+    .vote-btn,
+    .send-btn,
+    .select-btn {
+        width: 80% !important;
+        margin: 10px auto !important;
+    }
+
+    .login img,
+    .user-icon i {
+        height: 28px !important;
+        font-size: 28px !important;
+    }
+
+    .arrow {
+        margin: 10px auto;
+        display: block;
+    }
+
+    .select-frame {
+        height: 400px !important;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 12px !important;
+        word-break: keep-all;
+    }
+
+    .fill span {
+        left: 10px;
+        font-size: 12px !important;
+    }
+
+    .modal {
+        width: 95% !important;
+        height: auto !important;
+    }
 }

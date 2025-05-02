@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>선정 부식 리스트</title>
-    <link rel="stylesheet" href="selectlist.css" />
+    <link rel="stylesheet" href="/css/selectlist.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <script>
@@ -28,12 +28,12 @@
 
                 const tdItem = document.createElement('td');
 
-
+                // 꺽쇠모양 페이지 이동
                 tdItem.innerHTML = `
                 ${row.items}
                 <span class="more">${row.more}</span>
 
-                <a href="#" class="link-chevron" onclick="window.top.location.href='comments.html'">
+                <a href="#" class="link-chevron" onclick="window.top.location.href='/html/popup.html'">
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
         `;

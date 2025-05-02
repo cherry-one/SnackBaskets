@@ -59,6 +59,7 @@ a {
     margin: auto;
 }
 
+/* 링크 시 색상변화 없 */
 a {
     text-decoration: none;
     font-weight: bold;
@@ -66,13 +67,11 @@ a {
 }
 
 a:hover{
-    color: black;
+    color: rgb(30, 63, 172);
     font-weight: bold;
 }
 
 button{
-    border: rgb(157, 188, 255) solid 2px;
-    background-color: rgb(157, 188, 255);
     text-decoration: none;
     font-weight: bold;
     color: white;
@@ -83,36 +82,33 @@ button:hover{
     font-weight: bold;
 }
 
-/* 사용자 우측 */
-.user-info{
-    position: absolute;
-    right: 1em;
+ /* 검색창  */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
 }
-.back-button {
-    z-index: 99;
-    position: absolute;
-    bottom: 29em;
-    right:61em;
-    font-size: 1.5em;
-    background: none;
+
+.search-box>input {
+    width: 70%;
+    padding: 0.5em;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+}
+/* 버튼 창 안으로 이동인데 ? 개 노가다다 */
+.search-box>button {
+    position: relative;
+    right: 30px;
     border: none;
+    background-color: transparent;
     cursor: pointer;
-} 
-
-.vote_box h4 {
-    text-align: left;
-    padding-left: 0.5em;
 }
 
-.table_pp {
+
+테이블 
+.table-wrapper {
     margin-top: 0.5em;
     overflow-x: auto;
-}
-.table_pp>p {
-    border: rgb(0,0,0) solid;
-    border-width: 0px 1px;
-    background-color: rgb(222, 233, 253);
-    margin: 0%;
 }
 
 table {
@@ -136,39 +132,31 @@ td {
     border: solid black 1px;
 }
 
-.table_tt {
-    overflow-x: auto;
-}
-.table_tt>p {
-    border: rgb(0,0,0) solid;
-    border-width: 0px 1px;
-    background-color: rgb(222, 233, 253);
-    margin: 0%;
-}
-.table_yy {
-    overflow-x: auto;
-}
-.table_yy>p {
-
-    background-color: rgb(222, 233, 253);
-    margin: 0%;
+input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 0.5em;
 }
 
-.money{
-    border: rgb(0,0,0) solid;
-    border-width: 0px 1px 1px;
+
+.chat-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.chat-input input {
+    width: 70%;
+    padding: 0.5em;
+    border: 1px solid rgb(157, 188, 255);
+    border-radius: 4px 0 0 4px;
+}
+
+.chat-input button {
+    padding: 0.5em 1em;
+    border: 1px solid rgb(157, 188, 255);
     background-color: rgb(157, 188, 255);
-    margin: 0%;
-}
-.m1{
-    border: black solid;
-    border-width: 1px 0px;
-    margin: 0%;
-    padding: 5px;
-}
-.m2{
-    padding: 5px;
-    margin: 0%;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
 }
 
 .register {
@@ -193,7 +181,7 @@ td {
 
 .select-btn {
     display: inline-block;
-    line-height: 40px;  
+    line-height: 40px;
     justify-self: center;
     align-items: center;
     text-align: center;

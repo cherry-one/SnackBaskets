@@ -128,9 +128,6 @@ td {
     gap: 40px;
     padding: 20px;
 }
-
-
-
 .bar {
     background-color: #e0e0e0;
     border-radius: 20px;
@@ -185,4 +182,52 @@ td {
     text-align: center;
     margin: 1em;
     margin-bottom: 10px;
+}
+
+
+
+/* 반응형 미디어 쿼리 */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .user-tools {
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 30px;
+    }
+
+    .graph,
+    .side-panel {
+        width: 100%;
+    }
+
+    .panel {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .register-btn,
+    .vote-btn {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .arrow {
+        margin: 20px auto;
+        display: block;
+    }
 }
